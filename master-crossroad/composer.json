@@ -1,0 +1,20 @@
+{
+  "name": "sda/mastercross",
+  "description": "Sterowanei sygnalizacjami",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Artur Undro",
+      "email": "artur@undro.eu"
+    }
+  ],
+  "require": {
+    "doctrine/dbal": "v2.5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sda\\Mastercross\\": "src/"
+    }
+  }
+}

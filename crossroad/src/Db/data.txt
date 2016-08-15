@@ -1,0 +1,17 @@
+use `crossroad`;
+
+DROP TABLE IF EXISTS `lights`;
+CREATE TABLE `lights`(
+  `id` INT(10) UNSIGNED NOT NULL  AUTO_INCREMENT,
+  `state` ENUM ('shutdown','suspended','green','red','yellow','red_yellow') DEFAULT  'suspended',
+  PRIMARY KEY (`id`)
+)ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+INSERT INTO `lights` (`id`,`state`) VALUES
+  (1,'suspended'),
+  (2,'shutdown'),
+  (3,'green'),
+  (4,'red'),
+  (5,'yellow'),
+  (6,'red_yellow')
+;

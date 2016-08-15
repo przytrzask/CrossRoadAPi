@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>lights</title>
+    <link href='css/main.css' rel='stylesheet' type='text/css'>
+    <link href='css/circle.css' rel='stylesheet' type='text/css'>
+    <script src='angular/angular.js' type='text/javascript'></script>
+    <script src='js/main.js' type='text/javascript'></script>
+  </head>
+  <body ng-app='json'>
+    <div class='wraper' ng-controller='jsonCtrl as jsonCtrl'>
+      <div class='mini-wraper' ng-repeat='step in mydata track by step.id'>
+        <section class='light light--{{step.state}}'>
+          <div class='light__circle'></div>
+          <div class='light__circle'></div>
+          <div class='light__circle'></div>
+        </section>
+        <section>
+          <div class='circle' ng-class='{scale: hover}' ng-mouseenter='hover = true' ng-mouseleave='hover = false'>
+            <div class='circle__layer {{step.state}}'>
+              <img src='{{images[$index]["skyline"]}}'>
+            </div>
+            <div class='circle__layer {{step.state}}'>
+              <img src='{{images[$index]["road"]}}'>
+            </div>
+            <div class='circle__layer {{step.state}}'>
+              <img src='{{images[$index]["vehicle"]}}'>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

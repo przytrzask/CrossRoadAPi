@@ -1,0 +1,155 @@
+@charset 'utf-8';
+@import "compass/reset"; 
+//variables
+$body-background-color: rgb(33, 33, 43);
+// $shadowColor;
+// $yellow: rgb(232, 255, 12);
+ // $grey: rgb(52, 73, 94);
+$red: rgb(222,70,57);
+$yellow: rgb(240, 197, 20);
+$grey: rgb(149, 165, 166);
+$greenLight: rgb(43, 174, 108);
+$background: rgb(204, 204, 204);
+
+//keyframes
+@keyframes suspended {
+    50% { background-color: $yellow; }
+}
+
+
+@mixin linear-gradient($deg,$fromColor, $toColor) {
+  background-image:
+    linear-gradient(
+      $deg, 
+      $fromColor, $toColor 50%);
+}
+@mixin flexbox($flexDirection,$alignItems,$justifyContent){
+  display: flex;
+  flex-direction: $flexDirection;
+  align-items:$alignItems;
+  justify-content: $justifyContent;
+  
+}
+
+%layer {
+    background-color:$grey;
+    position:relative;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+      &:after{
+      content: '';
+       
+       transform: rotate(135deg);
+      position:absolute;
+      top:1.2rem;
+      left:0.5rem;
+      height:1.6em;
+     width:3.2rem;
+     border-radius: 90px 90px 0 0;
+     background-color:rgba(34,52,64,0.2);
+}
+  
+  
+  
+  }
+
+
+
+.wraper{
+   margin: 0 auto;
+  width: 1000px;
+  flex-wrap: wrap; 
+  @include flexbox(row,center,center);
+
+
+&::after {
+  content: "";
+  background: url('../img/background.svg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}}
+
+.mini-wraper {
+  margin: 50px auto;
+  width: 50%;
+  @include flexbox(row-reverse,center,space-around);
+}
+
+.light {
+  @include flexbox(column,center,space-around);
+  margin:0px auto;
+  height: 11rem;
+  width: 5rem;
+  background: #333;
+  border: 0.5em solid #fff;
+  border-radius: 2em;
+  &--green {
+    .light__circle {
+      &:nth-of-type(3){
+      background-color:$greenLight;
+      border: 3px solid $greenLight;
+      
+    }
+      @extend %layer;
+}
+  }
+  &--red {
+    .light__circle {
+      &:nth-of-type(1){
+      background-color:$red;
+      border: 3px solid $red;
+      
+    }
+      @extend %layer;
+}
+  }
+  &--red_yellow {
+    .light__circle {
+      &:nth-of-type(1){
+      background-color:$red;
+      border: 3px solid $red;
+    }
+      &:nth-of-type(2){
+      background-color:$yellow;
+      border: 3px solid $yellow;
+    }
+      @extend %layer;
+}
+  }
+  &--yellow {
+    .light__circle {
+      &:nth-of-type(2){
+      background-color:$yellow;
+      border: 3px solid $yellow;
+       
+    }
+      @extend %layer;
+}
+  }
+  &--suspended {
+    .light__circle {
+      &:nth-of-type(2){
+      
+        animation: suspended 1.3s infinite steps(1,start);
+        border: 3px solid $yellow;
+        
+    }
+      @extend %layer;
+}
+  }
+  
+      
+}
+    
+    
+    
+    
+  
+  

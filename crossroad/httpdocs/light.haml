@@ -1,0 +1,30 @@
+
+!!!
+%html
+  %head
+    %title lights
+    
+    %link{ :href=> 'css/main.css', :rel=> 'stylesheet', :type=>'text/css'}
+    %link{ :href=> 'css/circle.css', :rel=> 'stylesheet', :type=>'text/css'}
+
+    %script{:type=>'text/javascript', :src=>'angular/angular.js'}
+    %script{:type=>'text/javascript', :src=>'js/main.js'}
+    
+    
+  %body{:'ng-app' => 'json'}
+    .wraper{:'ng-controller'=> 'jsonCtrl as jsonCtrl'}
+      .mini-wraper{:'ng-repeat'=> "step in mydata track by step.id"}
+        %section{:class=>'light light--{{step.state}}'}
+          .light__circle
+          .light__circle
+          .light__circle
+        %section{:'ng-class'=>"{scale: hover}",:'ng-mouseenter'=>"hover = true", :'ng-mouseleave'=>"hover = false"}
+          .circle
+            .circle__layer{:class=>'{{step.state}}'}
+              %img{:src => '{{images[$index]["skyline"]}}'}
+            .circle__layer{:class=>'{{step.state}}'}
+              %img{:src => '{{images[$index]["road"]}}'}
+            .circle__layer{:class=>'{{step.state}}'}
+              %img{:src => '{{images[$index]["vehicle"]}}'}  
+
+             

@@ -1,0 +1,20 @@
+{
+  "name": "sda/crossroad",
+  "description": "Projekt na zakonczenie kursu - sygnalizacja swietlna",
+  "minimum-stability": "dev",
+  "license": "prioprietary",
+  "authors": [
+    {
+      "name": "Ania Raczkowska",
+      "email": "anulka_r@poczta.onet.pl"
+    }
+  ],
+  "require": {
+    "doctrine/dbal": "v2.5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sda\\Crossroad\\": "src/"
+    }
+  }
+}
