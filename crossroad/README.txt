@@ -1,5 +1,5 @@
 do podglądu
-http://trystar.local
+http://crossroad.local
 
 do API
-http://trystar.local/api/light (GET|POST)
+http://crossroad.local/api/light (GET|POST)
