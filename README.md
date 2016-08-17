@@ -174,7 +174,6 @@ VALUES
   (1, 1, '2016-08-15 19:06:20');
 
 ```
-
 #### Launching the cycler
  You can use cron.
  On windows just use this simple script
